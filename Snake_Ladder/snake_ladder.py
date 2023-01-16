@@ -3,7 +3,7 @@ import random
 
 def snake_ladder():
     """
-        This function Checks for the player position to reach winning position 100
+        This function Checks for the player position to reach Exact winning position 100
         If reached then will print that player won the game
     :return: None
     """
@@ -21,6 +21,8 @@ def snake_ladder():
                 player_position += 0
             case 1:
                 player_position += number_on_dice
+                if player_position > winning_position:
+                    player_position -= number_on_dice
             case 2:
                 player_position -= number_on_dice
                 if player_position < 0:
