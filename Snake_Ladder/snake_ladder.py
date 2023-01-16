@@ -3,8 +3,8 @@ import random
 
 def snake_ladder():
     """
-        This function checks for the starting Position of Single player and Roll a Dice to
-        get number 
+        This function checks the options for snake,ladder or no play and updates the player
+        position accordingly
     :return: None
     """
     player_position = 0
@@ -13,6 +13,21 @@ def snake_ladder():
     print("Lets Roll the Dice")
     number_on_dice = roll_dice()
     print("The Number on Dice is:", number_on_dice)
+    player_options = random.randint(0, 2)
+    # no_play = 0
+    # ladder = 1
+    # snake = 2
+    match player_options:
+        case 0:
+            player_position = 0
+        case 1:
+            player_position += number_on_dice
+        case 2:
+            player_position -= number_on_dice
+            if player_position < 0:
+                player_position = 0
+
+    print("Player Position is:", player_position)
 
 
 def roll_dice():
